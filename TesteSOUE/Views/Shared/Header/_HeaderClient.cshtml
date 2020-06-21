@@ -1,0 +1,57 @@
+﻿@model CadastroModel
+
+<style type="text/css">
+    .navbar {
+        background: #DBBB81 !important;
+    }
+
+    .dropdown {
+        border-radius: 0;
+        border: 0;
+    }
+
+    .dropdown-menu {
+        background: #DBBB81;
+        border: 0;
+        top: 80%;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .dropdown-item:hover {
+        background: #b48f4e;
+        color: #fff;
+    }
+
+    .dropdown-menu a {
+        color: #fff;
+    }
+
+    .navbar .nav-item .nav-link {
+        color: #eee !important;
+    }
+
+    .navbar .nav-item .nav-link:hover .navbar .nav-item .nav-link {
+        color: red !important;
+    }
+</style>
+
+<nav class="navbar navbar-expand-sm   navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" sp-area="" asp-controller="Home" asp-action="Index">BANK</a>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" sp-area="" asp-controller="Home" asp-action="Investimento">Investimento</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sp-area="" asp-controller="Home" asp-action="Planos">Planos</a>
+            </li>
+        </ul>
+
+        <a class="btn btn-outline-default my-2 my-sm-0" sp-area="" asp-controller="Cliente" asp-action="Sair">Sair</a>
+
+    </div>
+</nav>

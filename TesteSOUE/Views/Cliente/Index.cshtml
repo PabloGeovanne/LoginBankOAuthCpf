@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Painel do Cliente";
+}
+
+
+<style type="text/css">
+    .container-custom-margin {
+        margin-top: 100px;
+        margin-bottom: 150px;
+    }
+</style>
+
+<div class="container container-custom-margin">
+    <h3>Seja Bem-vindo @Model.Name</h3>  
+
+    <ul>
+        <li>
+            @Model.Email
+        </li>
+        <li>
+            @Model.PhoneNumber
+        </li>
+        <li>
+            @Model.Address
+        </li>
+    </ul>
+
+</div>
+
