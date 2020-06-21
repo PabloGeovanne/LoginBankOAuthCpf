@@ -113,8 +113,9 @@ namespace TesteSOUE.Controllers
 
             if (cadastro != null)
             {
-                var grandmaClaims = new List<Claim>() { 
-            
+                var grandmaClaims = new List<Claim>() {
+
+                    new Claim("Id", cadastro.Id.ToString()),
                     new Claim(ClaimTypes.Name, cadastro.Name),
                     new Claim(ClaimTypes.Email, cadastro.Email),
                     new Claim("Cpf", cadastro.Cpf),

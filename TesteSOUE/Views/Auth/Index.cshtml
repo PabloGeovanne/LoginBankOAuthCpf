@@ -18,6 +18,17 @@
 
 <div class="container container-custom-margin">
 
+    @{
+        var x = @ViewBag.Alert;
+
+        if (!string.IsNullOrEmpty(x))
+        {
+            <div class="alert alert-danger" role="alert">
+                @x
+            </div>
+        }
+    }
+
     <partial name="~/Views/Auth/Message/_AlertAccessDanied.cshtml" />
 
 </div>

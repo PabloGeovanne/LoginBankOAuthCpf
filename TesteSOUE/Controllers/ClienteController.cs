@@ -30,6 +30,7 @@ namespace TesteSOUE.Controllers
         public IActionResult Index()
         {
             var identity = (ClaimsIdentity)User.Identity;
+            string id = identity.Claims.FirstOrDefault(c => c.Type == "Id").Value;
             string cpf = identity.Claims.FirstOrDefault(c => c.Type == "Cpf").Value;
             string name = identity.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
             string email = identity.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value;
@@ -38,6 +39,7 @@ namespace TesteSOUE.Controllers
 
             CadastroModel cadastro = new CadastroModel() 
             { 
+                Id = Convert.ToInt32(id),
                 Cpf = cpf,
                 Name = name,
                 Email = email,
@@ -45,9 +47,15 @@ namespace TesteSOUE.Controllers
                 Address = streetaddress            
             };
 
-            string dataArray = JsonConvert.SerializeObject(cadastro, Formatting.None);
+            var cookie = Request.Cookies["Cadastro"];
+            LoginLogModel LoginLog = new LoginLogModel()
+            {
+                DataClient = cadastro,
+                Token = cookie
+            };
+            LoginLog.Create();
 
-            dataArray = UrlEncoder.Default.Encode(dataArray);
+            string dataArray = JsonConvert.SerializeObject(cadastro, Formatting.None);
 
             //CREATE DATA COOKIES NOT SECURE
             CookieOptions option = new CookieOptions();
@@ -60,6 +68,7 @@ namespace TesteSOUE.Controllers
             return View(cadastro);
         }
 
+        [Authorize]
         public IActionResult Sair()
         {
             Response.Cookies.Delete("Cadastro_UnSafe");

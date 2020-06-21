@@ -21,6 +21,8 @@ namespace TesteSOUE.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Alert = "CPF invalido para a operação realizada!";
+
             return View();
         }
 

@@ -28,7 +28,6 @@ namespace TesteSOUE.Models
         [Required(ErrorMessage = "O campo Endereço deve ser informado!")]
         public string Address { get; set; }
 
-
         public void Create()
         {
             MySqlCommand Command = new MySqlCommand();
