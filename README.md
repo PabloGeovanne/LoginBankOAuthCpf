@@ -1,3 +1,8 @@
+# DEMO
+Link: http://dev.pab.ltda/soue
+users test: CPF: 265.000.000-01, CPF: 400.000.008-01, CPF: 400.000.008-02
+Feel free to register and test the system!
+
 # LoginBankOAuthCpf
 Systemic testing for user registration and generation of authentication token for bank login using Microsoft System Security Claims and ASP.NET CORE 3.1 MVC validation methods
 
